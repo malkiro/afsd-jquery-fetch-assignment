@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <div class="col-md-6">
+                <h2>Student Details Management</h2>
+            </div>
+            <div class="col-md-6">
+                <div id="addButton">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#formmodal" onclick="btnAdd();"><img
+                            src="images/student.png" width="30px" height="30px" class="mr-1"> Add
+                        Student</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table id="example" class="display" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="formmodal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(8, 216, 216);">
+                    <h4 class="modal-title text-white" id="staticBackdropLabel"><img src="images/student.png"
+                            width="40px" height="40px" class="mr-1"> Student Form</h4>
+                    <p id="requredLable">
+                        <span style="color: red; font-weight: bold; font-size: 22px;">*</span>
+                        Required Fields
+                    </p>
+                    <button class="btn btn-danger" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label for="txtCNumber" class="col-md-5"><b>Student ID:
+                                        <span style="color: red; font-size: 22px;">*</span></b></label>
+                                <div class="col-md-7">
+                                    <input type="text" id="id" placeholder="Enter Student ID Here"
+                                        class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label for="txtCNumber" class="col-md-5"><b>Student Name:
+                                        <span style="color: red; font-size: 22px;">*</span></b></label>
+                                <div class="col-md-7">
+                                    <input type="text" id="name" placeholder="Enter Student Name Here"
+                                        class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label for="txtCNumber" class="col-md-5"><b>Student Address:
+                                        <span style="color: red; font-size: 22px;">*</span></b></label>
+                                <div class="col-md-7">
+                                    <input type="text" id="address" placeholder="Enter Student Address Here"
+                                        class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <label for="txtCNumber" class="col-md-5"><b>Student Salary:
+                                        <span style="color: red; font-size: 22px;">*</span></b></label>
+                                <div class="col-md-7">
+                                    <input type="text" id="salary" placeholder="Enter Student Salary Here"
+                                        class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="#bottomButtonsRow">
+                    <div class="col-md-12" id="#bottomButtons">
+                        <button type="button" class="btn btn-secondary mr-3" onclick="btnClear()">Clear</button>
+                        <button type="button" class="btn btn-primary" onclick="btnSave()">Save</button>
+                    </div>
+                </div>
+
+
+
+                <div class="modal-footer">
+                    <div id="response">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
